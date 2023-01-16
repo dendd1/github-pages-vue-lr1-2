@@ -8,6 +8,7 @@ const app = Vue.createApp({
             specialization: 'бухгалтер рассады',
             Year_ending: '2022',
             erPhone: '',
+            erMail: '',
             profession: 'бухгалтер',
             city: 'Чайхона',
             photo: 'https://s00.yaplakal.com/pics/pics_original/5/9/2/14163295.jpg',
@@ -34,6 +35,13 @@ const app = Vue.createApp({
             if (/\D/.test(this.phone)) {
                 this.erPhone += ' Номер должен сожержать только цифры.';
             }
+        },
+        validateMail(){
+            this.erMail = '';
+            if (!(/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/.test(this.mail))) {
+                this.erMail += 'Введите почту корректно. example@mail.ru';
+            }
+
         }
 
     }

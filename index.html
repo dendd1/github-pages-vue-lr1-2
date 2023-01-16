@@ -86,13 +86,14 @@
 
                     </div>
 
+                    <p class="fs-5 text-danger">{{ erMail }}</p>
                     <div class="d-flex form-row justify-content-center align-items-center">
 
                         <p class="fs-5 form-label">Почта</p>
 
 
                         <!--Поле для ввода почты-->
-                        <input v-model="mail" class="form-input  fs-5" type="text" maxlength="35">
+                        <input v-model="mail" @input="validateMail" class="form-input  fs-5" type="text" maxlength="35">
 
                     </div>
 
@@ -220,12 +221,12 @@
 
                     <p class="fs-5 form-input my-3">{{ surname }} {{ name }} {{ patronymic }}</p>
 
-                    <div v-if=" mail == '' && (erPhone.length > 0 || phone == '')">
+                    <div v-if=" (mail == ''|| erMail.length > 0) && (erPhone.length > 0 || phone == '')">
                         <p class="fs-5 form-input my-3">Ваши контакты</p>
                     </div>
-                    <p class="fs-5 form-input my-3" v-if="erPhone.length > 0">{{ mail }}</p>
+                    <p class="fs-5 form-input my-3" v-else-if="erPhone.length > 0 && erMail.length == 0">{{ mail }}</p>
+                    <p class="fs-5 form-input my-3" v-else-if="erPhone.length == 0 && erMail.length > 0">тел.: +7{{ phone }}</p>
                     <p class="fs-5 form-input my-3" v-else>{{ mail }} (тел.: +7{{ phone }})</p>
-
 
                     <p class="fs-5 form-input my-3">Родился {{ bDate }}. Проживает в г. {{ city }}</p>
                     <p class="fs-5 ">О себе:</p>
