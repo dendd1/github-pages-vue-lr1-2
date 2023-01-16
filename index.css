@@ -1,13 +1,33 @@
-.box {
-    width: 900px;
+* {
+    margin: 0;
+    padding: 0;
+}
+.form-label{
+    margin: 0;
+}
+.form-row {
+    border: 4px solid rgba(214, 214, 214, .6);
+    margin: 10px 70px 10px 0px;
+    border-radius: 6px;
+    background: rgba(214, 214, 214, .6);
 }
 
-.input-site {
-    height: 35px;
-    border-radius: 3px;
-    width: 480px;
+.form-label {
+    height: 100%;
+    padding: 0 8px 0 8px;
+    white-space: nowrap;
 }
 
-.photo {
+.form-input {
+    background: white;
+    border-width: 0 !important;
+    width: 100%;
+    padding: 0 0 0 10px;
+    outline: 0 none;
+}
 
+.form-out-img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
 }

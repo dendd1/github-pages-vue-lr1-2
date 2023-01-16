@@ -3,8 +3,8 @@ const app = Vue.createApp({
     data() {
         return {
             // Готовый присет заполнения формы
-            institution: 'МГЧПУМ (бывший тракторно-космический завод)',
-            faculty: 'ФРАТ (факультет рассада автоматических технологий)',
+            institution: 'МГЧПУМ',
+            faculty: 'ФРАТ',
             specialization: 'бухгалтер рассады',
             Year_ending: '2022',
             erPhone: '',
@@ -29,7 +29,7 @@ const app = Vue.createApp({
         validatePhone() {
             this.erPhone = '';
             if (this.phone.length < 6 || this.phone.length > 10) {
-                this.erPhone = 'Длина телефона должна быть от 6 до 10 символов.';
+                this.erPhone = 'Длина номера должна быть от 6 до 10 символов.';
             }
             if (/\D/.test(this.phone)) {
                 this.erPhone += ' Номер должен сожержать только цифры.';

@@ -8,245 +8,248 @@
 <script src="https://unpkg.com/vue@next"></script>
 <link rel="stylesheet" href="index.css">
 <div id="app">
+
     <div class="m-5">
 
 
         <div class="row">
-            <div class="col">
+            <div class="col-6">
                 <h1 class="fs-3 m-3">Заполните форму:</h1>
                 <!--Форма для ввода данных-->
                 <form>
 
 
-                    <div class="row">
-                        <div class="col-3">
-                            <p class="fs-5">Профессия</p>
-                        </div>
-                        <div class="col-9">
-                            <!--Поле для ввода профессии-->
-                            <input v-model="profession" class="input-site border fs-5 p-2" type="text">
-                        </div>
+                    <div class="d-flex form-row justify-content-center align-items-center">
+                        <p class="fs-5 form-label">Профессия</p>
+                        <!--Поле для ввода профессии-->
+                        <input v-model="profession" class="form-input  fs-5" type="text" maxlength="35">
+
                     </div>
 
-                    <div class="row">
-                        <div class="col-3">
-                            <p class="fs-5">Фалимия</p>
-                        </div>
-                        <div class="col-9">
-                            <!--Поле для ввода фамилии-->
-                            <input v-model="surname" class="input-site border fs-5 p-2 " type="text">
-                        </div>
+                    <div class="d-flex form-row justify-content-center align-items-center">
+                        <p class="fs-5 form-label">Фалимия</p>
+                        <!--Поле для ввода фамилии-->
+                        <input v-model="surname" class="form-input  fs-5" type="text" maxlength="35">
                     </div>
 
 
-                    <div class="row">
-                        <div class="col-3">
-                            <!--Поле для ввода имени-->
-                            <p class="fs-5">Имя</p>
-                        </div>
-                        <div class="col-9">
-                            <input v-model="name" class="input-site border fs-5 p-2 " type="text">
-                        </div>
+                    <div class="d-flex form-row justify-content-center align-items-center">
+
+                        <!--Поле для ввода имени-->
+                        <p class="fs-5 form-label">Имя</p>
+
+
+                        <input v-model="name" class="form-input  fs-5" type="text" maxlength="35">
+
                     </div>
 
-                    <div class="row">
-                        <div class="col-3">
-                            <p class="fs-5">Отчесво</p>
-                        </div>
-                        <div class="col-9">
-                            <!--Поле для ввода Отчества-->
-                            <input v-model="patronymic" class="input-site border fs-5 p-2 " type="text">
-                        </div>
+                    <div class="d-flex form-row justify-content-center align-items-center">
+
+                        <p class="fs-5 form-label">Отчесво</p>
+
+
+                        <!--Поле для ввода Отчества-->
+                        <input v-model="patronymic" class="form-input  fs-5" type="text" maxlength="35">
+
                     </div>
 
-                    <div class="row">
-                        <div class="col-3">
-                            <p class="fs-5">Город</p>
-                        </div>
-                        <div class="col-9">
-                            <!--Поле для ввода города-->
-                            <input v-model="city" class="input-site border fs-5 p-2 " type="text">
-                        </div>
-                    </div>
+                    <div class="d-flex form-row justify-content-center align-items-center">
+
+                        <p class="fs-5 form-label">Город</p>
 
 
-                    <div class="row">
-                        <div class="col-3">
-                            <p class="fs-5">Фото</p>
-                        </div>
-                        <div class="col-9">
-                            <!--Поле для загрузки ссылки на фото-->
-                            <input v-model="photo" class="input-site border fs-5 p-2 " type="text">
-                        </div>
+                        <!--Поле для ввода города-->
+                        <input v-model="city" class="form-input  fs-5" type="text" maxlength="20">
+
                     </div>
 
 
-                    <div class="row">
-                        <div class="col-3">
-                            <p class="fs-5">Телефон</p>
-                        </div>
-                        <div class="col-9">
-                            <!--Поле для ввода телефона-->
-                            <input v-model="phone" @input="validatePhone" class="input-site border fs-5 p-2 " type="text">
-                            <p class="fs-5 text-danger" style="width: 400px">{{ erPhone }}</p>
-                        </div>
+                    <div class="d-flex form-row justify-content-center align-items-center">
+
+                        <p class="fs-5 form-label">Фото</p>
+
+
+                        <!--Поле для загрузки ссылки на фото-->
+                        <input v-model="photo" class="form-input  fs-5" type="text">
+
                     </div>
 
-                    <div class="row">
-                        <div class="col-3">
-                            <p class="fs-5">Почта</p>
-                        </div>
-                        <div class="col-9">
-                            <!--Поле для ввода почты-->
-                            <input v-model="mail" class="input-site border fs-5 p-2 " type="text">
-                        </div>
+                    <p class="fs-5 text-danger">{{ erPhone }}</p>
+                    <div class="d-flex form-row justify-content-center align-items-center">
+
+                        <p class="fs-5 form-label">Телефон(+7)</p>
+
+
+                        <!--Поле для ввода телефона-->
+                        <input v-model="phone" @input="validatePhone" class="form-input  fs-5" type="text">
+
+
+                    </div>
+
+                    <div class="d-flex form-row justify-content-center align-items-center">
+
+                        <p class="fs-5 form-label">Почта</p>
+
+
+                        <!--Поле для ввода почты-->
+                        <input v-model="mail" class="form-input  fs-5" type="text" maxlength="35">
+
                     </div>
 
 
-                    <div class="row">
-                        <div class="col-3">
-                            <p class="fs-5">Дата рождения</p>
-                        </div>
-                        <div class="col-9">
-                            <!--Поле для указания даты рождения-->
-                            <input v-model="bDate" class="input-site border fs-5 p-2 " type="date">
-                        </div>
+                    <div class="d-flex form-row justify-content-center align-items-center">
+
+                        <p class="fs-5 form-label">Дата рождения</p>
+
+
+                        <!--Поле для указания даты рождения-->
+                        <input v-model="bDate" class="form-input  fs-5" type="date">
+
                     </div>
 
-                    <div class="row">
-                        <div class="col-3">
-                            <p class="fs-5">О себе</p>
-                        </div>
-                        <div class="col-9">
-                            <!--Поле для ввода информации о личных качествах-->
-                            <textarea v-model="about" class="input-site border fs-5 p-2" style="height: 200px;" maxlength="350"
-                                      rows="7"></textarea>
-                        </div>
+                    <div class="d-flex form-row justify-content-center align-items-center">
+
+                        <p class="fs-5 form-label">О себе</p>
+
+
+                        <!--Поле для ввода информации о личных качествах-->
+                        <textarea v-model="about" class="form-input  fs-5" maxlength="350" rows="7"></textarea>
+
                     </div>
 
-                    <div class="row">
-                        <div class="col-3">
-                            <p class="fs-5">Образование</p>
-                        </div>
+                    <div class="d-flex form-row justify-content-center align-items-center">
+
+                        <p class="fs-5 form-label">Образование</p>
+
                         <!--Поле для выбора степени образования-->
-                        <div class="col-9">
-                            <!--              <input v-model="education" class="input-site border fs-5 p-2 " type="text">-->
-                            <select v-model="education" class="input-site border fs-5  ">
-                                <option>Среднее</option>
-                                <option>Среднее специальное</option>
-                                <option>Неоконченное высшее</option>
-                                <option>Высшее</option>
-                            </select>
-                        </div>
+
+                        <select v-model="education" class="form-input  fs-5">
+                            <option>Среднее</option>
+                            <option>Среднее специальное</option>
+                            <option>Неоконченное высшее</option>
+                            <option>Высшее</option>
+                        </select>
+
 
                     </div>
+
                     <div v-if="education != 'Среднее'">
-                        <div class="row">
-                            <div class="col-3">
-                                <p class="fs-5">Учебное заведение</p>
-                            </div>
-                            <div class="col-9">
-                                <!--Поле для ввода названия учебного заведения-->
-                                <input v-model="institution" class="input-site border fs-5 p-2 " type="text">
-                            </div>
+                        <div class="d-flex form-row justify-content-center align-items-center">
+
+                            <p class="fs-5 form-label">Учеб. заведение</p>
+
+
+                            <!--Поле для ввода названия учебного заведения-->
+                            <input v-model="institution" class="form-input  fs-5" type="text" maxlength="35">
+
 
                         </div>
 
-                        <div class="row">
-                            <div class="col-3">
-                                <p class="fs-5">Факультет</p>
-                            </div>
-                            <div class="col-9">
-                                <!--Поле для ввода названия факультета-->
-                                <input v-model="faculty" class="input-site border fs-5 p-2 " type="text">
-                            </div>
+                        <div class="d-flex form-row justify-content-center align-items-center">
+
+                            <p class="fs-5 form-label">Факультет</p>
+
+
+                            <!--Поле для ввода названия факультета-->
+                            <input v-model="faculty" class="form-input  fs-5" type="text" maxlength="35">
+
 
                         </div>
 
-                        <div class="row">
-                            <div class="col-3">
-                                <p class="fs-5">Специализация</p>
-                            </div>
-                            <div class="col-9">
-                                <!--Поле для ввода названия специализации-->
-                                <input v-model="specialization" class="input-site border fs-5 p-2 " type="text">
-                            </div>
+                        <div class="d-flex form-row justify-content-center align-items-center">
+
+                            <p class="fs-5 form-label">Специализация</p>
+
+
+                            <!--Поле для ввода названия специализации-->
+                            <input v-model="specialization" class="form-input  fs-5" type="text" maxlength="35">
+
 
                         </div>
 
-                        <div class="row">
-                            <div class="col-3">
-                                <p class="fs-5">Год окончания</p>
-                            </div>
-                            <div class="col-9">
-                                <!--Поле для ввода года окончания-->
-                                <input v-model="Year_ending" type="number" class="input-site border fs-5 p-2 " maxlength="4" min="1950" max="2099" step="1"  />
-                            </div>
+                        <div class="d-flex form-row justify-content-center align-items-center">
+
+                            <p class="fs-5 form-label">Год окончания</p>
+
+
+                            <!--Поле для ввода года окончания-->
+                            <input v-model="Year_ending" type="number" class="form-input  fs-5" maxlength="4" min="1900" max="2023"
+                                   step="1"/>
+
 
                         </div>
-
-
-
 
 
                     </div>
-                    <div class="row">
-                        <div class="col-3">
-                            <p class="fs-5">Ключевые навыки</p>
-                        </div>
-                        <div class="col-9">
-                            <!--Поле для ввода информации о ключевых навыков-->
-                            <textarea v-model="skills" class="input-site border fs-5 p-2" style="height: 200px;" maxlength="150"
-                                      rows="7"></textarea>
-                        </div>
+                    <div class="d-flex form-row justify-content-center align-items-center">
+
+                        <p class="fs-5 form-label">Ключевые навыки</p>
+
+
+                        <!--Поле для ввода информации о ключевых навыков-->
+                        <textarea v-model="skills" class="form-input  fs-5" maxlength="150"
+                                  rows="7"></textarea>
+
                     </div>
 
-                    <div class="row">
-                        <div class="col-3">
-                            <p class="fs-5">Желаемая ЗП (Рубли)</p>
-                        </div>
-                        <div class="col-9">
-                            <!--Поле для ввода информации о желаемой зп-->
-                            <input v-model="money" class="input-site border fs-5 p-2 " type="text">
-                        </div>
+                    <div class="d-flex form-row justify-content-center align-items-center">
+
+                        <p class="fs-5 form-label">Желаемая ЗП (Рубли)</p>
+
+                        <!--Поле для ввода информации о желаемой зп-->
+                        <input v-model="money" class="form-input  fs-5" type="text" maxlength="20">
+
                     </div>
 
 
                 </form>
             </div>
             <!--Структура генерации и вывода информации в резюме-->
-            <div class="col">
+            <div class="col-6">
                 <h1>Ваше резюме</h1>
-                <div class="row">
-                    <!--Колонка с ФИО, контактами и фото пользователя -->
-                    <div class="col-6">
-                        <p class="fs-5">{{ surname }} {{ name }} {{ patronymic }} - {{ profession }}</p>
-                        <p class="fs-5" v-if="erPhone.length > 0">{{ mail }}</p>
-                        <p class="fs-5" v-else>{{ mail }} (тел.: +7{{ phone }})</p>
-                        <img :src="photo" class="photo img-fluid">
+                <div class="form-row p-3">
+                    <div v-if="profession == ''">
+                        <p class="fs-5 mb-2 fw-bold text-danger">Ваша профессия</p>
                     </div>
-                    <!--Колонка с датой рождения, городом и описанием пользователя -->
-                    <div class="col-6">
-                        <p class="fs-5">{{ bDate }}</p>
-                        <p class="fs-5">г. {{ city }}</p>
-                        <p class="fs-5">О себе:</p>
-                        <p class="fs-5">{{ about }}</p>
-                    </div>
-                </div>
-                <!--Информация о навыках, образовании и желаемой ЗП -->
-                <div class="row">
-                    <p class="fs-5">Навыки: {{ skills }}</p>
-                    <p class="fs-5">Образование: {{ education }}</p>
-                    <div v-if="education != 'Среднее'">
-                        <p class="fs-5">Учебное заведение: {{ institution }}</p>
-                        <p class="fs-5">Факультет: {{ faculty }}</p>
-                        <p class="fs-5">Специализация: {{ specialization }}</p>
-                        <p class="fs-5">Год окончания: {{ Year_ending }}</p>
-                    </div>
-                </div>
-                <p class="fs-5 text-center">Желаемая ЗП: {{ money }} (Р)</p>
+                    <p class="fs-5 mb-2 fw-bold text-danger">{{ profession }}</p>
+                    <img :src="photo" class="form-out-img">
 
+                    <div v-if="surname == '' &&  name == '' && patronymic == ''">
+                        <p class="fs-5 form-input my-3">Ваше ФИО</p>
+                    </div>
+
+                    <p class="fs-5 form-input my-3">{{ surname }} {{ name }} {{ patronymic }}</p>
+
+                    <div v-if=" mail == '' && (erPhone.length > 0 || phone == '')">
+                        <p class="fs-5 form-input my-3">Ваши контакты</p>
+                    </div>
+                    <p class="fs-5 form-input my-3" v-if="erPhone.length > 0">{{ mail }}</p>
+                    <p class="fs-5 form-input my-3" v-else>{{ mail }} (тел.: +7{{ phone }})</p>
+
+
+                    <p class="fs-5 form-input my-3">Родился {{ bDate }}. Проживает в г. {{ city }}</p>
+                    <p class="fs-5 ">О себе:</p>
+                    <p class="fs-5 form-input mt-2 mb-3" style="word-break: break-all;">{{ about }}</p>
+
+                    <p class="fs-5 ">Навыки:</p>
+                    <p class="fs-5 form-input mt-2 mb-3" style="word-break: break-all;">{{ skills }}</p>
+
+                    <p class="fs-5 ">Образование:</p>
+                    <p class="fs-5 form-input mt-2 mb-3">{{ education }}</p>
+
+                    <div v-if="education != 'Среднее'">
+
+                        <p class="fs-5 ">Место получения образования:</p>
+                        <p class="fs-5 form-input mt-2 mb-3">Учебное заведение: {{ institution }}</p>
+                        <p class="fs-5 form-input my-3">Факультет: {{ faculty }}</p>
+                        <p class="fs-5 form-input my-3">Специализация: {{ specialization }}</p>
+                        <p class="fs-5 form-input my-3">Год окончания: {{ Year_ending }}</p>
+                    </div>
+                    <p class="fs-5 text-center fw-bold text-danger">Желаемая ЗП: {{ money }} (Р)</p>
+
+                </div>
             </div>
+
         </div>
     </div>
 
